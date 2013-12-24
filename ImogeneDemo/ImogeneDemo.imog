@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imogene:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:imogene="http://www.i-mogene.org/imogene/1.0" name="ImogeneDemo">
+  <description display="Imogene Demo" locale="en"/>
+  <description display="Demo Imogene" locale="fr"/>
+  <entities name="CaseDeclaration" shortName="" columnFields="//@entities.0/@groups.0/@fields.0 //@entities.0/@groups.2/@fields.0 //@entities.0/@groups.2/@fields.1 //@entities.0/@groups.2/@fields.2 //@entities.0/@groups.0/@fields.2 //@entities.0/@groups.1/@fields.0 //@entities.0/@groups.1/@fields.1 //@entities.0/@groups.1/@fields.2 //@entities.0/@groups.1/@fields.3" mainFields="//@entities.0/@groups.0/@fields.0 //@entities.0/@groups.0/@fields.2" secondaryFields="//@entities.0/@groups.1/@fields.1 //@entities.0/@groups.2/@fields.2" icon="CaseDeclaration.png" sortFields="//@entities.0/@groups.0/@fields.0" color="66b032" georeferenced="//@entities.0/@groups.2/@fields.4">
+    <descriptions display="Case declaration" locale="en"/>
+    <descriptions display="D\u00e9claration de cas" locale="fr"/>
+    <groups name="Case" shortName="CASEA" icon="CDCase.png">
+      <descriptions display="Case" locale="en"/>
+      <descriptions display="Cas" locale="fr"/>
+      <fields xsi:type="imogene:DateField" name="CaseReportDate" shortName="CASEAA" defaultValue="now" required="true">
+        <descriptions display="Report date" locale="en"/>
+        <descriptions display="Date de d\u00e9claration" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:MainRelationFieldEntity" name="ReportingOfficer" shortName="CASEAB" entity="Officer" cardinality="1">
+        <descriptions display="Reporting officer" locale="en"/>
+        <descriptions display="Enqu\u00eateur" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:EnumField" name="Symptoms" shortName="CASEAC" required="true" multipleSelection="true">
+        <descriptions display="Symptoms" locale="en"/>
+        <descriptions display="Symptomes" locale="fr"/>
+        <enumValues name="Fever">
+          <descriptions display="Fever" locale="en"/>
+          <descriptions display="Fi\u00e8vre" locale="fr"/>
+        </enumValues>
+        <enumValues value="1" name="Diarroea">
+          <descriptions display="Diarroea" locale="en"/>
+          <descriptions display="Diarr\u00e9e" locale="fr"/>
+        </enumValues>
+        <enumValues value="2" name="Vomit">
+          <descriptions display="Vomit" locale="en"/>
+          <descriptions display="Vomissements" locale="fr"/>
+        </enumValues>
+        <enumValues value="3" name="Redness">
+          <descriptions display="Redness" locale="en"/>
+          <descriptions display="Rougeurs" locale="fr"/>
+        </enumValues>
+        <enumValues value="5" name="Swelling">
+          <descriptions display="Swelling" locale="en"/>
+          <descriptions display="Gonflements" help="" locale="fr"/>
+        </enumValues>
+        <enumValues value="6" name="TummyAches">
+          <descriptions display="Tummy aches" locale="en"/>
+          <descriptions display="Maux de ventre" locale="fr"/>
+        </enumValues>
+        <enumValues value="7" name="Headaches">
+          <descriptions display="Headaches" locale="en"/>
+          <descriptions display="Maux de t\u00eate" locale="fr"/>
+        </enumValues>
+        <enumValues value="8" name="Backaches">
+          <descriptions display="Backaches" locale="en"/>
+          <descriptions display="Douleurs au dos" locale="fr"/>
+        </enumValues>
+        <enumValues value="9" name="ChestPain">
+          <descriptions display="Chest pain" locale="en"/>
+          <descriptions display="Douleur \u00e0 la poitrine" locale="fr"/>
+        </enumValues>
+        <enumValues value="10" name="Bleeding">
+          <descriptions display="Bleeding" locale="en"/>
+          <descriptions display="Saignements" locale="fr"/>
+        </enumValues>
+        <enumValues value="11" name="Confusion">
+          <descriptions display="Confusion" locale="en"/>
+          <descriptions display="Confusion" locale="fr"/>
+        </enumValues>
+        <enumValues value="12" name="Other">
+          <descriptions display="Other" locale="en"/>
+          <descriptions display="Autres" locale="fr"/>
+        </enumValues>
+      </fields>
+      <fields xsi:type="imogene:TextAreaField" name="OtherSymptoms" shortName="CASEAD">
+        <descriptions display="OtherSymptoms" locale="en"/>
+        <descriptions display="Autres symptomes" locale="fr"/>
+        <fieldDependentVisibility dependencyField="//@entities.0/@groups.0/@fields.2" dependencyFieldValue="12;.*|.*;12;.*|.*;12|12"/>
+      </fields>
+      <fields xsi:type="imogene:BooleanField" name="MultimediaInfo" shortName="CASEAE">
+        <descriptions display="Multimedia data" locale="en"/>
+        <descriptions display="Donn\u00e9es multim\u00e9dia" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:PhotoField" name="SPhoto" shortName="CASEAF" calculationFunctionName="" category="photo">
+        <descriptions display="Photo" locale="en"/>
+        <descriptions display="Photo" locale="fr"/>
+        <fieldDependentVisibility dependencyField="//@entities.0/@groups.0/@fields.4" dependencyFieldValue="true"/>
+      </fields>
+      <fields xsi:type="imogene:SoundField" name="AudioComment" shortName="CASEAG" category="sound">
+        <descriptions display="Audio comment" locale="en"/>
+        <descriptions display="Commentaire audio" locale="fr"/>
+        <fieldDependentVisibility dependencyField="//@entities.0/@groups.0/@fields.4" dependencyFieldValue="true"/>
+      </fields>
+      <fields xsi:type="imogene:VideoField" name="SVideo" shortName="CASEAH" calculationFunctionName="" category="video">
+        <descriptions display="Video" locale="en"/>
+        <descriptions display="Vid\u00e9o" locale="fr"/>
+        <fieldDependentVisibility dependencyField="//@entities.0/@groups.0/@fields.4" dependencyFieldValue="true"/>
+      </fields>
+      <fields xsi:type="imogene:TextField" name="Comment" shortName="CASEAI">
+        <descriptions display="Comments" locale="en"/>
+        <descriptions display="Commentaires" locale="fr"/>
+        <fieldDependentVisibility dependencyField="//@entities.0/@groups.0/@fields.4" dependencyFieldValue="true"/>
+      </fields>
+    </groups>
+    <groups name="MedicalData" shortName="CASEC" icon="CDMedicalData.png">
+      <descriptions display="Medical data" locale="en"/>
+      <descriptions display="Donn\u00e9es m\u00e9dicales" locale="fr"/>
+      <fields xsi:type="imogene:DateField" name="OnsetDate" shortName="CASECA" defaultValue="">
+        <descriptions display="Symptoms onset date" locale="en"/>
+        <descriptions display="Date de d\u00e9but des symptomes" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:EnumField" name="SuspectedSyndrome" shortName="CASECB">
+        <descriptions display="Suspected syndrome" locale="en"/>
+        <descriptions display="Maladie suspect\u00e9" locale="fr"/>
+        <enumValues name="Cholera">
+          <descriptions display="Cholera" locale="en"/>
+          <descriptions display="Cholera" locale="fr"/>
+        </enumValues>
+        <enumValues value="1" name="AcuteDiarrhoea">
+          <descriptions display="Acute diarrhoea" locale="en"/>
+          <descriptions display="Diarr\u00e9es aigues" locale="fr"/>
+        </enumValues>
+        <enumValues value="2" name="AcuteBloodyDiarrhoea">
+          <descriptions display="Acute bloody diarrhoea" locale="en"/>
+          <descriptions display="Diarr\u00e9es saignantes aigues" locale="fr"/>
+        </enumValues>
+        <enumValues value="3" name="AcuteJaundice">
+          <descriptions display="Acute jaundice" locale="en"/>
+          <descriptions display="Jaunisse aigue" locale="fr"/>
+        </enumValues>
+        <enumValues value="4" name="Meningitis">
+          <descriptions display="Meningitis" locale="en"/>
+          <descriptions display="Meningitis" locale="fr"/>
+        </enumValues>
+        <enumValues value="5" name="AcuteLowerRespiratoryInfection">
+          <descriptions display="Acute lower respiratory infection" locale="en"/>
+          <descriptions display="Infection aigue des voies respiratoires" locale="fr"/>
+        </enumValues>
+        <enumValues value="6" name="Measles">
+          <descriptions display="Measles" locale="en"/>
+          <descriptions display="Rougeole" locale="fr"/>
+        </enumValues>
+        <enumValues value="7" name="UnexplainedFever">
+          <descriptions display="Unexplained fever" locale="en"/>
+          <descriptions display="Fi\u00e8vre inexpliqu\u00e9e" locale="fr"/>
+        </enumValues>
+        <enumValues value="8" name="Malaria">
+          <descriptions display="Malaria" locale="en"/>
+          <descriptions display="Paludisme" locale="fr"/>
+        </enumValues>
+        <enumValues value="9" name="AcuteHaemorrhagicFever">
+          <descriptions display="Acute haemorrhagic fever" locale="en"/>
+          <descriptions display="Fi\u00e8vre h\u00e9moragique aigue" locale="fr"/>
+        </enumValues>
+        <enumValues value="10" name="AcuteFlaccidParalysis">
+          <descriptions display="Acute flaccid paralysis" locale="en"/>
+          <descriptions display="Paralysie aigue" locale="fr"/>
+        </enumValues>
+        <enumValues value="11" name="Tetanus">
+          <descriptions display="Tetanus" locale="en"/>
+          <descriptions display="T\u00e9tanos" locale="fr"/>
+        </enumValues>
+        <enumValues value="12" name="Other">
+          <descriptions display="Other" locale="en"/>
+          <descriptions display="Autre" locale="fr"/>
+        </enumValues>
+      </fields>
+      <fields xsi:type="imogene:BooleanField" name="TreatmentGiven" shortName="CASECC">
+        <descriptions display="Treatment given" locale="en"/>
+        <descriptions display="Traitement administr\u00e9" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:EnumField" name="Outcome" shortName="CASECD">
+        <descriptions display="Outcome" locale="en"/>
+        <descriptions display="R\u00e9sultat" locale="fr"/>
+        <enumValues name="CurrentlyIll">
+          <descriptions display="Currently ill" locale="en"/>
+          <descriptions display="Malade" locale="fr"/>
+        </enumValues>
+        <enumValues value="1" name="RecoveringOrRecovered">
+          <descriptions display="Recovering or recovered" locale="en"/>
+          <descriptions display="Gu\u00e9ri ou en phase de gu\u00e9rison" locale="fr"/>
+        </enumValues>
+        <enumValues value="2" name="Died">
+          <descriptions display="Died" locale="en"/>
+          <descriptions display="D\u00e9c\u00e9d\u00e9" locale="fr"/>
+        </enumValues>
+      </fields>
+      <fields xsi:type="imogene:TextField" name="FinalDiagnosis" shortName="CASECE">
+        <descriptions display="Final diagnosis" locale="en"/>
+        <descriptions display="Diagnostic final" locale="fr"/>
+      </fields>
+    </groups>
+    <groups name="Location" shortName="CASEB" icon="Location.png">
+      <descriptions display="Location" locale="en"/>
+      <descriptions display="Lieu" locale="fr"/>
+      <fields xsi:type="imogene:MainRelationFieldEntity" name="AdminLevel1" shortName="CASEBA" entity="AdminLevel1" cardinality="1">
+        <descriptions display="Country" locale="en"/>
+        <descriptions display="Pays" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:MainRelationFieldEntity" name="AdminLevel2" shortName="CASEBB" entity="AdminLevel2" cardinality="1" relationHierarchicalFilter="//@entities.0/@groups.2/@fields.0 //@entities.4/@groups.0/@fields.0">
+        <descriptions display="Region" locale="en"/>
+        <descriptions display="R\u00e9gion" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:MainRelationFieldEntity" name="AdminLevel3" shortName="CASEBC" entity="AdminLevel3" cardinality="1" relationHierarchicalFilter="//@entities.0/@groups.2/@fields.1 //@entities.5/@groups.0/@fields.1">
+        <descriptions display="Province" locale="en"/>
+        <descriptions display="Province" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:AddressField" name="Address" shortName="CASEBD">
+        <descriptions display="Address" locale="en"/>
+        <descriptions display="Adresse" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:GeoField" name="Gps" shortName="CASEBE">
+        <descriptions display="Geographic coordinates" locale="en"/>
+        <descriptions display="Coordonn\u00e9es g\u00e9ographiques" locale="fr"/>
+      </fields>
+    </groups>
+    <groups name="PatientInfo" shortName="CASED" icon="Patient.png">
+      <descriptions display="Patient" locale="en"/>
+      <descriptions display="Patient" locale="fr"/>
+      <fields xsi:type="imogene:MainRelationFieldEntity" name="CasePatient" shortName="CASEDA" entity="Patient" cardinality="1" oppositeRelationField="//@entities.1/@groups.1/@fields.0">
+        <descriptions display="Patient" locale="en"/>
+        <descriptions display="Patient" locale="fr"/>
+      </fields>
+    </groups>
+  </entities>
+  <entities name="Patient" shortName="PAT" columnFields="//@entities.1/@groups.0/@fields.0 //@entities.1/@groups.0/@fields.1 //@entities.1/@groups.0/@fields.2 //@entities.1/@groups.0/@fields.3 //@entities.1/@groups.0/@fields.4" mainFields="//@entities.1/@groups.0/@fields.0 //@entities.1/@groups.0/@fields.1" secondaryFields="//@entities.1/@groups.0/@fields.3 //@entities.1/@groups.0/@fields.2" icon="Patient.png" sortFields="//@entities.1/@groups.0/@fields.0" color="f18e1c">
+    <descriptions display="Patient" help="" locale="en"/>
+    <descriptions display="Patient" locale="fr"/>
+    <groups name="Identification" shortName="PATA" icon="PIdentification.png">
+      <descriptions display="Identity" help="The patient identity" locale="en"/>
+      <descriptions display="Identit\u00e9" help="L'identit\u00e9 du patient" locale="fr"/>
+      <fields xsi:type="imogene:TextField" name="Name" shortName="PATAA" required="true">
+        <descriptions display="Name" locale="en"/>
+        <descriptions display="Nom" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:TextField" name="FirstName" shortName="PATAB" required="true">
+        <descriptions display="Firstname" locale="en"/>
+        <descriptions display="Pr\u00e9nom" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:EnumField" name="Sexe" shortName="PATAC" required="true">
+        <descriptions display="Gender" locale="en"/>
+        <descriptions display="Sexe" locale="fr"/>
+        <enumValues value="1" name="Male">
+          <descriptions display="Male" locale="en"/>
+          <descriptions display="Homme" locale="fr"/>
+        </enumValues>
+        <enumValues value="2" name="Female">
+          <descriptions display="Female" locale="en"/>
+          <descriptions display="Femme" locale="fr"/>
+        </enumValues>
+      </fields>
+      <fields xsi:type="imogene:IntegerField" name="Age" shortName="PATAD" calculationFunctionName="" min="0" max="120">
+        <descriptions display="Age" locale="en"/>
+        <descriptions display="Age" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:TextField" name="UniqueId" shortName="PATAE">
+        <descriptions display="Unique ID" locale="en"/>
+        <descriptions display="Identifiant" locale="fr"/>
+        <validationRules validationRegularExpression="[A-Za-z]{2}[0-9]{2}">
+          <descriptions display="The id should have 2 letters followed by 2 digits" help="The id should have 2 letters followed by 2 digits" locale="en"/>
+          <descriptions display="L'identitifant doit avoit 2 lettres suivies de 2 chiffres" help="L'identitifant doit avoit 2 lettres suivies de 2 chiffres" locale="fr"/>
+        </validationRules>
+      </fields>
+      <fields xsi:type="imogene:PhotoField" name="Photo" shortName="PATAF" category="photo">
+        <descriptions display="Photo" locale="en"/>
+        <descriptions display="Photo" locale="fr"/>
+      </fields>
+    </groups>
+    <groups name="HealthInfo" shortName="PATB" icon="PHealthInfo.png">
+      <descriptions display="Health informations" locale="en"/>
+      <descriptions display="Donn\u00e9es m\u00e9dicales" locale="fr"/>
+      <fields xsi:type="imogene:ReverseRelationFieldEntity" name="PatCaseDeclaration" shortName="PATBA" entity="CaseDeclaration" oppositeRelationField="//@entities.0/@groups.3/@fields.0">
+        <descriptions display="Case declarations" locale="en"/>
+        <descriptions display="D\u00e9clarations de cas" locale="fr"/>
+      </fields>
+    </groups>
+  </entities>
+  <entities xsi:type="imogene:Actor" name="Officer" shortName="OFF" columnFields="//@entities.2/@groups.0/@fields.0 //@entities.2/@groups.0/@fields.1 //@entities.2/@groups.1/@fields.0 //@entities.2/@groups.1/@fields.1" mainFields="//@entities.2/@groups.0/@fields.0" secondaryFields="//@entities.2/@groups.0/@fields.1" icon="Actor.png" sortFields="//@entities.2/@groups.0/@fields.0" color="2a71b0" adminFields="//@entities.2/@groups.0/@fields.0 //@entities.2/@groups.0/@fields.1">
+    <descriptions display="User" locale="en"/>
+    <descriptions display="Utilisateur" locale="fr"/>
+    <groups name="Identification" shortName="OFFA" icon="AIdentification.png">
+      <descriptions display="Identification" locale="en"/>
+      <descriptions display="Identification" locale="fr"/>
+      <fields xsi:type="imogene:TextField" name="Name" shortName="OFFAA" required="true">
+        <descriptions display="Name" locale="en"/>
+        <descriptions display="Nom" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:TextField" name="Organisation" shortName="OFFAB">
+        <descriptions display="Organisation" locale="en"/>
+        <descriptions display="Organisation" locale="fr"/>
+      </fields>
+    </groups>
+    <groups name="Contact" shortName="OFFB" icon="AContact.png">
+      <descriptions display="Contact" locale="en"/>
+      <descriptions display="Contact" locale="fr"/>
+      <fields xsi:type="imogene:PhoneField" name="PhoneNumber" shortName="OFFBA">
+        <descriptions display="Phone number" locale="en"/>
+        <descriptions display="Num\u00e9ro de t\u00e9l\u00e9phone" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:EmailField" name="Email" shortName="OFFBB">
+        <descriptions display="Email" locale="en"/>
+        <descriptions display="Email" locale="fr"/>
+      </fields>
+    </groups>
+  </entities>
+  <entities name="AdminLevel1" shortName="ADM1" columnFields="//@entities.3/@groups.0/@fields.0" mainFields="//@entities.3/@groups.0/@fields.0" sortFields="//@entities.3/@groups.0/@fields.0">
+    <descriptions display="Country" locale="en"/>
+    <descriptions display="Pays" locale="fr"/>
+    <groups name="Identification" shortName="ADM1A">
+      <descriptions display="Identification" locale="en"/>
+      <descriptions display="Identification" locale="fr"/>
+      <fields xsi:type="imogene:TextField" name="Name" shortName="ADM1AA" required="true" translatable="true">
+        <descriptions display="Name" locale="en"/>
+        <descriptions display="Nom" locale="fr"/>
+      </fields>
+    </groups>
+  </entities>
+  <entities name="AdminLevel2" shortName="ADM2" columnFields="//@entities.4/@groups.0/@fields.1 //@entities.4/@groups.0/@fields.0" mainFields="//@entities.4/@groups.0/@fields.1" sortFields="//@entities.4/@groups.0/@fields.0">
+    <descriptions display="Region" locale="en"/>
+    <descriptions display="R\u00e9gion" locale="fr"/>
+    <groups name="Identification" shortName="ADM2A">
+      <descriptions display="Identification" locale="en"/>
+      <descriptions display="Identification" locale="fr"/>
+      <fields xsi:type="imogene:MainRelationFieldEntity" name="AdminLevel1" shortName="ADM2AA" required="true" entity="AdminLevel1" cardinality="1">
+        <descriptions display="Country" locale="en"/>
+        <descriptions display="Pays" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:TextField" name="Name" shortName="ADM2AB" required="true" translatable="true">
+        <descriptions display="Name" locale="en"/>
+        <descriptions display="Nom" locale="fr"/>
+      </fields>
+    </groups>
+  </entities>
+  <entities name="AdminLevel3" shortName="ADM3" columnFields="//@entities.5/@groups.0/@fields.2 //@entities.5/@groups.0/@fields.0 //@entities.5/@groups.0/@fields.1" mainFields="//@entities.5/@groups.0/@fields.2" sortFields="//@entities.5/@groups.0/@fields.1">
+    <descriptions display="Province" locale="en"/>
+    <descriptions display="Province" locale="fr"/>
+    <groups name="Identification" shortName="ADM3A">
+      <descriptions display="Identification" locale="en"/>
+      <descriptions display="Identification" locale="fr"/>
+      <fields xsi:type="imogene:MainRelationFieldEntity" name="AdminLevel1" shortName="ADM3AA" required="true" entity="AdminLevel1" cardinality="1">
+        <descriptions display="Country" locale="en"/>
+        <descriptions display="Pays" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:MainRelationFieldEntity" name="AdminLevel2" shortName="ADM3AB" required="true" entity="AdminLevel2" cardinality="1" relationHierarchicalFilter="//@entities.5/@groups.0/@fields.0 //@entities.4/@groups.0/@fields.0">
+        <descriptions display="Region" locale="en"/>
+        <descriptions display="R\u00e9gion" locale="fr"/>
+      </fields>
+      <fields xsi:type="imogene:TextField" name="Name" shortName="ADM3AC" required="true" translatable="true">
+        <descriptions display="Name" locale="en"/>
+        <descriptions display="Nom" locale="fr"/>
+      </fields>
+    </groups>
+  </entities>
+  <entityUIFormats entity="CaseDeclaration" withTabulations="true"/>
+  <entityUIFormats entity="Patient" withTabulations="true"/>
+  <entityUIFormats entity="Officer" withTabulations="true"/>
+  <themas name="Declaration" entities="CaseDeclaration Patient">
+    <descriptions display="Case declaration" locale="en"/>
+    <descriptions display="D\u00e9claration de cas" locale="fr"/>
+  </themas>
+  <themas name="Administration" entities="Officer AdminLevel1 AdminLevel2 AdminLevel3">
+    <descriptions display="Administration" locale="en"/>
+    <descriptions display="Administration" locale="fr"/>
+  </themas>
+  <languages name="English" floatFormat="." isoCode="en"/>
+  <languages name="French" floatFormat="." isoCode="fr"/>
+</imogene:Project>
