@@ -1,0 +1,29 @@
+in the jasperreports templates for tb reports,
+
+do the follwing replacements:
+
+fr.medes.model.client.report.tb.MedanyTbReport
+org.imogene.tbimogene.client.report.tb.MedanyTbReport
+
+fr.medes.model.spring.controller.report.tb.HibernateQueryResultDataSource
+org.imogene.tbimogene.server.servlet.report.tb.HibernateQueryResultDataSource
+
+fr.medes.medany.gwt.lazyhandler.UtilWrapper
+org.imogene.web.server.util.DateUtil
+
+fr.medes.medany.gwt.lazyhandler.ServerDisplayValueWrapper
+org.imogene.tbimogene.server.util.ServerMainFieldsUtilImpl
+
+fr.medes.model.client.report.tb.TBConstants
+org.imogene.tbimogene.client.report.tb.TBConstants
+
+fr.medes.model.gwtModel.GWT
+org.imogene.tbimogene.client.entity.
+
+GWT
+
+ServerMainFieldsUtilImpl.getEnumDisplayValue
+ServerMainFieldsUtilImpl.get().getEnumDisplayValue
+
+pdfFontName="./fr/medes/medany/spring/common/fonts/sylfaen.TTF"
+pdfFontName="./org/imogene/web/server/fonts/sylfaen.TTF"
