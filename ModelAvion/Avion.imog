@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:imogene="http://www.i-mogene.org/imogene/1.0">
+  <imogene:Project name="GestionFlotteAvion">
+    <description display="Gestion d'une flotte d'avion" locale="fr"/>
+    <description display="Plane Fleet Management" locale="en"/>
+    <entities name="Avion" shortName="AVI" columnFields="/0/@entities.0/@groups.0/@fields.1 /0/@entities.0/@groups.0/@fields.0 /0/@entities.0/@groups.0/@fields.2 /0/@entities.0/@groups.2/@fields.0" mainFields="/0/@entities.0/@groups.0/@fields.1 /0/@entities.0/@groups.0/@fields.0" icon="avion.png" clientFilterFields="/0/@entities.0/@groups.0/@fields.2 /0/@entities.0/@groups.2/@fields.0" sortFields="/0/@entities.0/@groups.0/@fields.1" actorFilterFields="/1" color="7625e4">
+      <descriptions display="Avion" locale="fr"/>
+      <descriptions display="Plane" locale="en"/>
+      <groups name="Identity" shortName="AVIA">
+        <descriptions display="Identit\u00e9" locale="fr"/>
+        <descriptions display="Identity" locale="en"/>
+        <fields xsi:type="imogene:TextField" name="Type" shortName="AVIAA" defaultValue="" required="true">
+          <descriptions display="Type" locale="fr"/>
+          <descriptions display="Type" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:TextField" name="Immatriculation" shortName="AVIAB" required="true">
+          <descriptions display="Immatriculation" locale="fr"/>
+          <descriptions display="Immatriculation" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:MainRelationFieldEntity" name="RelationCompany" shortName="AVIAC" defaultValue="" required="true" entity="Company" cardinality="1" oppositeRelationField="/0/@entities.5/@groups.1/@fields.0">
+          <descriptions display="Companie" locale="fr"/>
+          <descriptions display="Company" locale="en"/>
+        </fields>
+      </groups>
+      <groups name="Pieces" readers="/0/@roles.1" writers="/0/@roles.1" shortName="AVIB">
+        <descriptions display="Pi\u00e8ces" locale="fr"/>
+        <descriptions display="Pieces" locale="en"/>
+        <fields xsi:type="imogene:MainRelationFieldEntity" name="RelationQueue" shortName="AVIBA" entity="Queue" cardinality="1" type="Composition" oppositeRelationField="/0/@entities.1/@groups.0/@fields.1">
+          <descriptions display="Queue" locale="fr"/>
+          <descriptions display="Tail" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:MainRelationFieldEntity" name="RelationAiles" shortName="AVIBB" entity="Aile" type="Composition" oppositeRelationField="/0/@entities.2/@groups.0/@fields.1">
+          <descriptions display="Ailes" locale="fr"/>
+          <descriptions display="Wings" locale="en"/>
+        </fields>
+      </groups>
+      <groups name="Equipage" readers="/0/@roles.0" writers="/0/@roles.0" shortName="AVIC">
+        <descriptions display="Equipage" locale="fr"/>
+        <descriptions display="Fleet" locale="en"/>
+        <fields xsi:type="imogene:MainRelationFieldEntity" name="RelationPilote" shortName="AVICA" entity="Pilote" cardinality="1" commonFields="/0/@entities.0/@groups.0/@fields.2 /0/@entities.3/@groups.0/@fields.3" relationHierarchicalFilter="/0/@entities.0/@groups.0/@fields.2 /0/@entities.3/@groups.0/@fields.3">
+          <descriptions display="Pilote" locale="fr"/>
+          <descriptions display="Pilot" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:MainRelationFieldEntity" name="RelationCopilote" shortName="AVICB" defaultValue="" entity="Pilote" cardinality="1" commonFields="/0/@entities.0/@groups.0/@fields.2 /0/@entities.3/@groups.0/@fields.3" relationHierarchicalFilter="/0/@entities.0/@groups.0/@fields.2 /0/@entities.3/@groups.0/@fields.3">
+          <descriptions display="Copilote" locale="fr"/>
+          <descriptions display="Copilot" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:MainRelationFieldEntity" name="RelationHotesses" shortName="AVICC" entity="Hotesse" commonFields="/0/@entities.0/@groups.0/@fields.2 /0/@entities.4/@groups.0/@fields.1" relationHierarchicalFilter="/0/@entities.0/@groups.0/@fields.2 /0/@entities.4/@groups.0/@fields.1">
+          <descriptions display="H\u00f4tesses" locale="fr"/>
+          <descriptions display="Stewardesses" locale="en"/>
+        </fields>
+      </groups>
+      <groups name="Entretien" readers="/0/@roles.0 /0/@roles.1" writers="/0/@roles.1" shortName="AVID">
+        <descriptions display="Carnet d'entretien" locale="fr"/>
+        <descriptions display="Maintenance book" locale="en"/>
+        <fields xsi:type="imogene:MainRelationFieldEntity" name="RelationCarnet" shortName="AVIDA" entity="CarnetEntretien" cardinality="1" oppositeRelationField="/0/@entities.6/@groups.0/@fields.1">
+          <descriptions display="RelationCarnet" locale="fr"/>
+          <descriptions display="RelationCarnet" locale="en"/>
+        </fields>
+      </groups>
+    </entities>
+    <entities name="Queue" shortName="QUE" columnFields="/0/@entities.1/@groups.0/@fields.0 /0/@entities.1/@groups.0/@fields.1" mainFields="/0/@entities.1/@groups.0/@fields.0" sortFields="/0/@entities.1/@groups.0/@fields.0" color="eeb719">
+      <descriptions display="Queue" locale="fr"/>
+      <descriptions display="Tail" locale="en"/>
+      <groups name="Description" readers="/0/@roles.1" writers="/0/@roles.1" shortName="QUEA">
+        <descriptions display="Description" locale="fr"/>
+        <descriptions display="Description" locale="en"/>
+        <fields xsi:type="imogene:TextField" name="NumeroSerie" shortName="QUEAA" required="true">
+          <descriptions display="NumeroSerie" locale="fr"/>
+          <descriptions display="NumeroSerie" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:ReverseRelationFieldEntity" name="RelationAvion" shortName="QUEAB" entity="Avion" cardinality="1" oppositeRelationField="/0/@entities.0/@groups.1/@fields.0">
+          <descriptions display="Avion" locale="fr"/>
+          <descriptions display="Plane" locale="en"/>
+        </fields>
+      </groups>
+    </entities>
+    <entities name="Aile" shortName="AIL" columnFields="/0/@entities.2/@groups.0/@fields.0 /0/@entities.2/@groups.0/@fields.1" mainFields="/0/@entities.2/@groups.0/@fields.0" sortFields="/0/@entities.2/@groups.0/@fields.0" color="c9ef62">
+      <descriptions display="Aile" locale="fr"/>
+      <descriptions display="Wing" locale="en"/>
+      <groups name="Description" readers="/0/@roles.1" writers="/0/@roles.1" shortName="AILA">
+        <descriptions display="Description" locale="fr"/>
+        <descriptions display="Description" locale="en"/>
+        <fields xsi:type="imogene:TextField" name="NumeroSerie" shortName="AILAA" required="true">
+          <descriptions display="NumeroSerie" locale="fr"/>
+          <descriptions display="NumeroSerie" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:ReverseRelationFieldEntity" name="RelationAvion" shortName="AILAB" entity="Avion" cardinality="1" oppositeRelationField="/0/@entities.0/@groups.1/@fields.1">
+          <descriptions display="Avion" locale="fr"/>
+          <descriptions display="Plane" locale="en"/>
+        </fields>
+      </groups>
+    </entities>
+    <entities name="Pilote" shortName="PIL" columnFields="/0/@entities.3/@groups.0/@fields.0 /0/@entities.3/@groups.0/@fields.1 /0/@entities.3/@groups.0/@fields.2 /0/@entities.3/@groups.0/@fields.3" mainFields="/0/@entities.3/@groups.0/@fields.1" icon="Pilote.png" sortFields="/0/@entities.3/@groups.0/@fields.1" actorFilterFields="/2" color="b6dca5" hasDynamicFields="true">
+      <descriptions display="Pilote" locale="fr"/>
+      <descriptions display="Pilot" locale="en"/>
+      <groups name="Description" readers="/0/@roles.0" writers="/0/@roles.0" shortName="PILA">
+        <descriptions display="Description" locale="fr"/>
+        <descriptions display="Description" locale="en"/>
+        <fields xsi:type="imogene:EnumField" name="Sexe" shortName="PILAA" required="true">
+          <descriptions display="Sexe" locale="fr"/>
+          <descriptions display="Sex" locale="en"/>
+          <enumValues name="Mr">
+            <descriptions display="Mr" locale="fr"/>
+            <descriptions display="Mr" locale="en"/>
+          </enumValues>
+          <enumValues value="1" name="Mme">
+            <descriptions display="Mme" locale="fr"/>
+            <descriptions display="Mme" locale="en"/>
+          </enumValues>
+        </fields>
+        <fields xsi:type="imogene:TextField" name="Nom" shortName="PILAB" required="true">
+          <descriptions display="Nom" locale="fr"/>
+          <descriptions display="Name" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:DateField" name="DateNaissance" shortName="PILAC">
+          <descriptions display="Date Naissance" locale="fr"/>
+          <descriptions display="Birthday" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:ReverseRelationFieldEntity" name="RelationCompany" shortName="PILAD" entity="Company" cardinality="1" oppositeRelationField="/0/@entities.5/@groups.2/@fields.0">
+          <descriptions display="Companie" locale="fr"/>
+          <descriptions display="Company" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:BooleanField" name="EstApte" shortName="PILAE">
+          <descriptions display="Est Apte" locale="fr"/>
+          <descriptions display="Est Apte" locale="en"/>
+        </fields>
+      </groups>
+    </entities>
+    <entities name="Hotesse" shortName="HOT" columnFields="/0/@entities.4/@groups.0/@fields.0 /0/@entities.4/@groups.0/@fields.1" mainFields="/0/@entities.4/@groups.0/@fields.0" icon="MedecinReferant.png" sortFields="/0/@entities.4/@groups.0/@fields.0" actorFilterFields="/3" color="d72bd0">
+      <descriptions display="H\u00f4tesse" locale="fr"/>
+      <descriptions display="Stewardess" locale="en"/>
+      <groups name="Description" readers="/0/@roles.0" writers="/0/@roles.0" shortName="HOTA">
+        <descriptions display="Description" locale="fr"/>
+        <descriptions display="Description" locale="en"/>
+        <fields xsi:type="imogene:TextField" name="Nom" shortName="HOTAA" required="true">
+          <descriptions display="Nom" locale="fr"/>
+          <descriptions display="Name" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:ReverseRelationFieldEntity" name="RelationCompany" shortName="HOTAB" entity="Company" cardinality="1" oppositeRelationField="/0/@entities.5/@groups.2/@fields.1">
+          <descriptions display="Companie" locale="fr"/>
+          <descriptions display="Company" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:MainRelationFieldEntity" name="Addresses" shortName="HOTAC" entity="Address" oppositeRelationField="/0/@entities.11/@groups.0/@fields.0" nestedForm="true" InverseCardinality="1">
+          <descriptions display="Adresses" locale="fr"/>
+          <descriptions display="Addresses" locale="en"/>
+        </fields>
+      </groups>
+    </entities>
+    <entities name="Company" shortName="COMP" columnFields="/0/@entities.5/@groups.0/@fields.0" mainFields="/0/@entities.5/@groups.0/@fields.0" icon="Hospital.png" sortFields="/0/@entities.5/@groups.0/@fields.0" color="4c9864">
+      <descriptions display="Compagnie" locale="fr"/>
+      <descriptions display="Company" locale="en"/>
+      <groups name="Description" shortName="COMPA">
+        <descriptions display="Description" locale="fr"/>
+        <descriptions display="Description" locale="en"/>
+        <fields xsi:type="imogene:TextField" name="Nom" shortName="COMPAA" required="true">
+          <descriptions display="Nom" locale="fr"/>
+          <descriptions display="Name" locale="en"/>
+        </fields>
+      </groups>
+      <groups name="Flotte" shortName="COMPB">
+        <descriptions display="Flotte" locale="fr"/>
+        <descriptions display="Fleet" locale="en"/>
+        <fields xsi:type="imogene:ReverseRelationFieldEntity" name="RelationAvion" shortName="COMPBA" entity="Avion" oppositeRelationField="/0/@entities.0/@groups.0/@fields.2">
+          <descriptions display="Avions" locale="fr"/>
+          <descriptions display="Planes" locale="en"/>
+        </fields>
+      </groups>
+      <groups name="Personnel" readers="/0/@roles.0" writers="/0/@roles.0" shortName="COMPC">
+        <descriptions display="Personnel" locale="fr"/>
+        <descriptions display="Staff" locale="en"/>
+        <fields xsi:type="imogene:MainRelationFieldEntity" name="RelationPilotes" shortName="COMPCA" entity="Pilote" oppositeRelationField="/0/@entities.3/@groups.0/@fields.3">
+          <descriptions display="Pilotes" locale="fr"/>
+          <descriptions display="Pilots" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:MainRelationFieldEntity" name="RelationHotesses" shortName="COMPCB" entity="Hotesse" oppositeRelationField="/0/@entities.4/@groups.0/@fields.1">
+          <descriptions display="H\u00f4tesses" locale="fr"/>
+          <descriptions display="Stewardesses" locale="en"/>
+        </fields>
+      </groups>
+    </entities>
+    <entities name="CarnetEntretien" shortName="CE" columnFields="/0/@entities.6/@groups.0/@fields.0 /0/@entities.6/@groups.0/@fields.1" mainFields="/0/@entities.6/@groups.0/@fields.0" sortFields="/0/@entities.6/@groups.0/@fields.0" color="4aa189">
+      <descriptions display="Carnet d'entretien" locale="fr"/>
+      <descriptions display="Maintenance book" locale="en"/>
+      <groups name="Description" readers="/0/@roles.0 /0/@roles.1" writers="/0/@roles.1" shortName="CEA">
+        <descriptions display="Description" locale="fr"/>
+        <descriptions display="Description" locale="en"/>
+        <fields xsi:type="imogene:TextField" name="Nom" shortName="CEAA" required="true">
+          <descriptions display="Nom" locale="fr"/>
+          <descriptions display="Name" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:ReverseRelationFieldEntity" name="RelationAvion" shortName="CEAB" entity="Avion" cardinality="1" oppositeRelationField="/0/@entities.0/@groups.3/@fields.0">
+          <descriptions display="Avion" locale="fr"/>
+          <descriptions display="Plane" locale="en"/>
+        </fields>
+      </groups>
+    </entities>
+    <entities name="Syndicat" shortName="SYND" columnFields="/0/@entities.7/@groups.0/@fields.0" mainFields="/0/@entities.7/@groups.0/@fields.0" sortFields="/0/@entities.7/@groups.0/@fields.0" color="1c389a" creators="/0/@roles.2 /0/@roles.0" directAccess="/0/@roles.2 /0/@roles.0">
+      <descriptions display="Staff Union" locale="en"/>
+      <descriptions display="Syndicat" locale="fr"/>
+      <groups name="Identification" readers="/0/@roles.2 /0/@roles.0" writers="/0/@roles.2 /0/@roles.0" shortName="SYNDA">
+        <descriptions display="Identification" locale="fr"/>
+        <descriptions display="Identification" locale="en"/>
+        <fields xsi:type="imogene:TextField" name="Nom" shortName="SYNDAA" required="true">
+          <descriptions display="Nom" locale="fr"/>
+          <descriptions display="Name" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:MainRelationFieldEntity" name="Companies" shortName="SYNDAB" entity="Company">
+          <descriptions display="Compagnies" locale="fr"/>
+          <descriptions display="Companies" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:MainRelationFieldEntity" name="Pilotes" shortName="SYNDAC" entity="Pilote" relationHierarchicalFilter="/0/@entities.7/@groups.0/@fields.1 /0/@entities.3/@groups.0/@fields.3">
+          <descriptions display="Pilotes" locale="fr"/>
+          <descriptions display="Pilots" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:MainRelationFieldEntity" name="President" shortName="SYNDAD" entity="Pilote" cardinality="1" relationHierarchicalFilter="/0/@entities.7/@groups.0/@fields.1 /0/@entities.3/@groups.0/@fields.3">
+          <descriptions display="Pr\u00e9sident" locale="fr"/>
+          <descriptions display="President" locale="en"/>
+        </fields>
+      </groups>
+    </entities>
+    <entities name="TestFieldEntity" shortName="TFE" columnFields="/0/@entities.8/@groups.0/@fields.0 /0/@entities.8/@groups.2/@fields.0 /0/@entities.8/@groups.1/@fields.0 /0/@entities.8/@groups.1/@fields.2 /0/@entities.8/@groups.3/@fields.2" mainFields="/0/@entities.8/@groups.0/@fields.0 /0/@entities.8/@groups.2/@fields.0 /0/@entities.8/@groups.1/@fields.0 /0/@entities.8/@groups.1/@fields.2" clientFilterFields="/0/@entities.8/@groups.0/@fields.9 /0/@entities.8/@groups.2/@fields.0 /0/@entities.8/@groups.1/@fields.0 /0/@entities.8/@groups.1/@fields.2 /0/@entities.8/@groups.0/@fields.6 /0/@entities.8/@groups.0/@fields.4 /0/@entities.8/@groups.0/@fields.0" sortFields="/0/@entities.8/@groups.0/@fields.0" color="2fbfcb" clientPeriodFilterable="true">
+      <descriptions display="Entit\u00e9 Test" locale="fr"/>
+      <descriptions display="Test Entity" locale="en"/>
+      <groups name="TestGroup" shortName="TFEA">
+        <descriptions display="Groupe" locale="fr"/>
+        <descriptions display="Group" locale="en"/>
+        <fields xsi:type="imogene:TextField" name="TextField" shortName="TFEAA" required="true">
+          <descriptions display="Champ Texte" locale="fr"/>
+          <descriptions display="Text field" locale="en"/>
+          <validationRules validationRegularExpression="[A-Z].*">
+            <descriptions display="La valeur doit commencer par une consonne" locale="fr"/>
+            <descriptions display="The value must start with an upper case" locale="en"/>
+          </validationRules>
+        </fields>
+        <fields xsi:type="imogene:TextField" name="TranslatableTextField" shortName="TFEAB" translatable="true">
+          <descriptions display="TranslatableTextField" locale="fr"/>
+          <descriptions display="TranslatableTextField" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:TextField" name="HiddenField" shortName="TFEAC" hidden="true">
+          <descriptions display="Champ cach\u00e9" locale="fr"/>
+          <descriptions display="Hidden Field" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:TextField" name="ReadOnlyField" shortName="TFEAD" readOnly="true">
+          <descriptions display="Champ en lecture seule" locale="fr"/>
+          <descriptions display="Read Only Field" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:IntegerField" name="IntField" shortName="TFEAE" min="5" max="10" unit="%">
+          <descriptions display="Champ int" locale="fr"/>
+          <descriptions display="Int field" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:TextField" name="DependsOnInt" shortName="TFEAF">
+          <descriptions display="DependsOnInt" locale="fr"/>
+          <descriptions display="DependsOnInt" locale="en"/>
+          <fieldDependentVisibility dependencyField="/0/@entities.8/@groups.0/@fields.4" dependencyFieldValue="2;8"/>
+        </fields>
+        <fields xsi:type="imogene:FloatField" name="FloatField" shortName="TFEAG" min="5.5" max="10.5" unit="mg/l" DecimalNumber="2">
+          <descriptions display="Champ float" locale="fr"/>
+          <descriptions display="Float Field" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:EmailField" name="EmailField" shortName="TFEAH">
+          <descriptions display="Champ email" locale="fr"/>
+          <descriptions display="Emai lField" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:PhoneField" name="PhoneField" shortName="TFEAI">
+          <descriptions display="Champ T\u00e9l\u00e9phone" locale="fr"/>
+          <descriptions display="Phone Field" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:BooleanField" name="BooleanField" shortName="TFEAJ">
+          <descriptions display="Champ Bool\u00e9en" locale="fr"/>
+          <descriptions display="Boolean Field" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:TextAreaField" name="TextAreaField" shortName="TFEAK">
+          <descriptions display="Champ Texte multi-lignes" locale="fr"/>
+          <descriptions display="TextArea Field" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:AddressField" name="AddressField" shortName="TFEAL">
+          <descriptions display="Champ Adresse" locale="fr"/>
+          <descriptions display="Address Field" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:GeoField" name="GeoField" shortName="TFEAM">
+          <descriptions display="Champ Coordonn\u00e9es GPS" locale="fr"/>
+          <descriptions display="GPS coordinates Field" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:BarcodeField" name="BarcodeField" shortName="TFEAN">
+          <descriptions display="Champ Barcode" locale="fr"/>
+          <descriptions display="Barcode Field" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:TextField" name="CalculatedField" shortName="TFEAO" calculationFunctionName="calculateSomething">
+          <descriptions display="Champ calcul\u00e9" locale="fr"/>
+          <descriptions display="Calculated Field" locale="en"/>
+        </fields>
+      </groups>
+      <groups name="Enumerations" shortName="TFEB">
+        <descriptions display="Enumerations" locale="fr"/>
+        <descriptions display="Enumerations" locale="en"/>
+        <fields xsi:type="imogene:EnumField" name="EnumField" shortName="TFEBA">
+          <descriptions display="Champ \u00e9num\u00e9ration (s\u00e9lection unique)" locale="fr"/>
+          <descriptions display="Enum Field (one selection)" locale="en"/>
+          <enumValues name="Val1">
+            <descriptions display="Val1" locale="fr"/>
+            <descriptions display="Val1" locale="en"/>
+          </enumValues>
+          <enumValues value="1" name="Val2">
+            <descriptions display="Val2" locale="fr"/>
+            <descriptions display="Val2" locale="en"/>
+          </enumValues>
+          <enumValues value="2" name="Val3">
+            <descriptions display="Val3" locale="fr"/>
+            <descriptions display="Val3" locale="en"/>
+          </enumValues>
+        </fields>
+        <fields xsi:type="imogene:TextField" name="DependsOnSingleEnum" shortName="TFEBB">
+          <descriptions display="D\u00e9pend du Champ \u00e9num\u00e9ration (s\u00e9lection unique)" locale="fr"/>
+          <descriptions display="Depends on Enum Field (one selection)" locale="en"/>
+          <fieldDependentVisibility dependencyField="/0/@entities.8/@groups.1/@fields.0" dependencyFieldValue="1"/>
+        </fields>
+        <fields xsi:type="imogene:EnumField" name="EnumFieldMult" shortName="TFEBC" multipleSelection="true">
+          <descriptions display="Champ \u00e9num\u00e9ration (s\u00e9lection multiple)" locale="fr"/>
+          <descriptions display="Enum Field (multiple selection)" locale="en"/>
+          <enumValues value="1" name="V1">
+            <descriptions display="V1" locale="fr"/>
+            <descriptions display="V1" locale="en"/>
+          </enumValues>
+          <enumValues value="2" name="V2">
+            <descriptions display="V2" locale="fr"/>
+            <descriptions display="V2" locale="en"/>
+          </enumValues>
+          <enumValues value="3" name="V3">
+            <descriptions display="V3" locale="fr"/>
+            <descriptions display="V3" locale="en"/>
+          </enumValues>
+          <enumValues value="4" name="V4">
+            <descriptions display="V4" locale="fr"/>
+            <descriptions display="V4" locale="en"/>
+          </enumValues>
+          <enumValues value="5" name="V5">
+            <descriptions display="V5" locale="fr"/>
+            <descriptions display="V5" locale="en"/>
+          </enumValues>
+          <enumValues value="6" name="V6">
+            <descriptions display="V6" locale="fr"/>
+            <descriptions display="V6" locale="en"/>
+          </enumValues>
+          <enumValues value="7" name="V7">
+            <descriptions display="V7" locale="fr"/>
+            <descriptions display="V7" locale="en"/>
+          </enumValues>
+        </fields>
+        <fields xsi:type="imogene:TextField" name="DependsOnMultiEnum" shortName="TFEBD">
+          <descriptions display="D\u00e9pend du Champ \u00e9num\u00e9ration (s\u00e9lection multiple)" locale="fr"/>
+          <descriptions display="Depends on Enum Field (multiple selection)" locale="en"/>
+          <fieldDependentVisibility dependencyField="/0/@entities.8/@groups.1/@fields.2" dependencyFieldValue="(.*\\D)?2(\\D.*)?|(.*\\D)?4(\\D.*)?"/>
+        </fields>
+      </groups>
+      <groups name="Dates" shortName="TFEC">
+        <descriptions display="Champs Date" locale="fr"/>
+        <descriptions display="Date Fields" locale="en"/>
+        <fields xsi:type="imogene:DateField" name="DateField" shortName="TFECA" defaultValue="now" min="01/01/2000" max="01/01/2100">
+          <descriptions display="Champ date" locale="fr"/>
+          <descriptions display="Date Field" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:TextField" name="DependsOnDate" shortName="TFECB">
+          <descriptions display="DependsOnDate" locale="fr"/>
+          <descriptions display="DependsOnDate" locale="en"/>
+          <fieldDependentVisibility dependencyField="/0/@entities.8/@groups.2/@fields.0" dependencyFieldValue="01/01/2010;01/02/2010"/>
+        </fields>
+        <fields xsi:type="imogene:DateTimeField" name="DateTimeField" shortName="TFECC" defaultValue="now" max="">
+          <descriptions display="DateTimeField" locale="fr"/>
+          <descriptions display="DateTimeField" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:TimeField" name="TimeField" shortName="TFECD" defaultValue="now">
+          <descriptions display="Champ Heure" locale="fr"/>
+          <descriptions display="Time Field" locale="en"/>
+        </fields>
+      </groups>
+      <groups name="Binaries" shortName="TFED">
+        <descriptions display="Champs Binaires" locale="fr"/>
+        <descriptions display="Binary fields" locale="en"/>
+        <fields xsi:type="imogene:BooleanField" name="IncludeBinaryFields" shortName="TFEDA" defaultValue="false">
+          <descriptions display="IncludeBinaryFields" locale="fr"/>
+          <descriptions display="IncludeBinaryFields" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:BinaryField" name="BinaryField" shortName="TFEDB" category="test">
+          <descriptions display="Champ Binaire" locale="fr"/>
+          <descriptions display="Binary Field" locale="en"/>
+          <fieldDependentVisibility dependencyField="/0/@entities.8/@groups.3/@fields.0" dependencyFieldValue="true"/>
+        </fields>
+        <fields xsi:type="imogene:PhotoField" name="PhotoField" shortName="TFEDC" category="photo">
+          <descriptions display="Champ Photo" locale="fr"/>
+          <descriptions display="Photo Field" locale="en"/>
+          <fieldDependentVisibility dependencyField="/0/@entities.8/@groups.3/@fields.0" dependencyFieldValue="true"/>
+        </fields>
+        <fields xsi:type="imogene:SoundField" name="SoundField" shortName="TFEDD" category="sound">
+          <descriptions display="Champ Son" locale="fr"/>
+          <descriptions display="Sound Field" locale="en"/>
+          <fieldDependentVisibility dependencyField="/0/@entities.8/@groups.3/@fields.0" dependencyFieldValue="true"/>
+        </fields>
+        <fields xsi:type="imogene:VideoField" name="VideoField" shortName="TFEDE" category="video">
+          <descriptions display="Champ Video" locale="fr"/>
+          <descriptions display="Video Field" locale="en"/>
+          <fieldDependentVisibility dependencyField="/0/@entities.8/@groups.3/@fields.0" dependencyFieldValue="true"/>
+        </fields>
+      </groups>
+    </entities>
+    <entities xsi:type="imogene:Actor" name="Manager" shortName="MAN" columnFields="/0/@entities.9/@groups.0/@fields.0" mainFields="/0/@entities.9/@groups.0/@fields.0" sortFields="/0/@entities.9/@groups.0/@fields.0" color="c6f166" hasDynamicFields="true" adminFields="/0/@entities.9/@groups.0/@fields.0">
+      <descriptions display="Manager" locale="fr"/>
+      <descriptions display="Manager" locale="en"/>
+      <groups name="Identification" readers="/0/@roles.2 /0/@roles.0 /0/@roles.1" writers="/0/@roles.2" shortName="MANA">
+        <descriptions display="Identification" locale="fr"/>
+        <descriptions display="Identification" locale="en"/>
+        <fields xsi:type="imogene:TextField" name="Name" shortName="MANAA" required="true">
+          <descriptions display="Name" locale="fr"/>
+          <descriptions display="Name" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:MainRelationFieldEntity" name="Organization" shortName="MANAB" entity="Organization" cardinality="1" nestedForm="true">
+          <descriptions display="Organization" locale="en"/>
+          <descriptions display="Organisation" locale="fr"/>
+        </fields>
+      </groups>
+      <filters name="Company" shortName="d00da44d-68b9-4019-b42a-c8a5f380e684" entity="Company"/>
+    </entities>
+    <entities xsi:type="imogene:Actor" name="Technician" shortName="TECH" columnFields="/0/@entities.10/@groups.0/@fields.0" mainFields="/0/@entities.10/@groups.0/@fields.0" sortFields="/0/@entities.10/@groups.0/@fields.0" authorizedRoles="/0/@roles.1" adminFields="/0/@entities.10/@groups.0/@fields.0">
+      <descriptions display="Technicien" locale="fr"/>
+      <descriptions display="Technician" locale="en"/>
+      <groups name="Identification" readers="/0/@roles.2 /0/@roles.0 /0/@roles.1" writers="/0/@roles.2" shortName="TECHA">
+        <descriptions display="Identification" locale="fr"/>
+        <descriptions display="Identification" locale="en"/>
+        <fields xsi:type="imogene:TextField" name="Name" shortName="TECHAA">
+          <descriptions display="Nom" locale="fr"/>
+          <descriptions display="Name" locale="en"/>
+        </fields>
+      </groups>
+    </entities>
+    <entities name="Address" shortName="ADD" columnFields="/0/@entities.11/@groups.0/@fields.1 /0/@entities.11/@groups.0/@fields.2 /0/@entities.11/@groups.0/@fields.3 /0/@entities.11/@groups.0/@fields.5 /0/@entities.11/@groups.0/@fields.8" mainFields="/0/@entities.11/@groups.0/@fields.1 /0/@entities.11/@groups.0/@fields.2 /0/@entities.11/@groups.0/@fields.3" nestedFields="/0/@entities.11/@groups.0/@fields.1 /0/@entities.11/@groups.0/@fields.2 /0/@entities.11/@groups.0/@fields.3 /0/@entities.11/@groups.0/@fields.4 /0/@entities.11/@groups.0/@fields.5 /0/@entities.11/@groups.0/@fields.6 /0/@entities.11/@groups.0/@fields.7 /0/@entities.11/@groups.0/@fields.8 /0/@entities.11/@groups.1/@fields.0">
+      <descriptions display="Adresse" locale="fr"/>
+      <descriptions display="Address" locale="en"/>
+      <groups name="Identification" readers="/0/@roles.0" writers="/0/@roles.0" shortName="ADDA">
+        <descriptions display="Identification" locale="fr"/>
+        <descriptions display="Identification" locale="en"/>
+        <fields xsi:type="imogene:ReverseRelationFieldEntity" name="Hotesse" shortName="ADDAA" entity="Hotesse" cardinality="1" oppositeRelationField="/0/@entities.4/@groups.0/@fields.2">
+          <descriptions display="H\u00f4tesse" locale="fr"/>
+          <descriptions display="Stewardess" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:EnumField" name="Type" shortName="ADDAB" required="true">
+          <descriptions display="Type" locale="fr"/>
+          <descriptions display="Type" locale="en"/>
+          <enumValues name="Personal">
+            <descriptions display="Personelle" locale="fr"/>
+            <descriptions display="Personal" locale="en"/>
+          </enumValues>
+          <enumValues value="1" name="Professional">
+            <descriptions display="Professionnelle" locale="fr"/>
+            <descriptions display="Professional" locale="en"/>
+          </enumValues>
+        </fields>
+        <fields xsi:type="imogene:IntegerField" name="Numero" shortName="ADDAC" required="true">
+          <descriptions display="Num\u00e9ro" locale="fr"/>
+          <descriptions display="Numero" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:TextField" name="City" shortName="ADDAD" required="true">
+          <descriptions display="Ville" locale="fr"/>
+          <descriptions display="City" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:GeoField" name="Coordinates" shortName="ADDAE">
+          <descriptions display="Coordinates" locale="fr"/>
+          <descriptions display="Coordinates" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:EnumField" name="ContactType" shortName="ADDAF" multipleSelection="true">
+          <descriptions display="ContactType" locale="fr"/>
+          <descriptions display="ContactType" locale="en"/>
+          <enumValues name="Phone">
+            <descriptions display="Phone" locale="fr"/>
+            <descriptions display="Phone" locale="en"/>
+          </enumValues>
+          <enumValues value="1" name="Email">
+            <descriptions display="Email" locale="fr"/>
+            <descriptions display="Email" locale="en"/>
+          </enumValues>
+          <enumValues value="2" name="Mail">
+            <descriptions display="Mail" locale="fr"/>
+            <descriptions display="Mail" locale="en"/>
+          </enumValues>
+        </fields>
+        <fields xsi:type="imogene:EmailField" name="Email" shortName="ADDAG">
+          <descriptions display="Email" locale="fr"/>
+          <descriptions display="Email" locale="en"/>
+          <fieldDependentVisibility dependencyField="/0/@entities.11/@groups.0/@fields.5" dependencyFieldValue="1"/>
+        </fields>
+        <fields xsi:type="imogene:PhotoField" name="Photo" shortName="ADDAH" category="photo">
+          <descriptions display="Photo" locale="fr"/>
+          <descriptions display="Photo" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:BooleanField" name="IsActive" shortName="ADDAI">
+          <descriptions display="IsActive" locale="fr"/>
+          <descriptions display="IsActive" locale="en"/>
+        </fields>
+      </groups>
+      <groups name="Administration" readers="/0/@roles.2" writers="/0/@roles.2" shortName="ADDB">
+        <descriptions display="Administration" locale="fr"/>
+        <descriptions display="Administration" locale="en"/>
+        <fields xsi:type="imogene:TextField" name="Comments" shortName="ADDBA">
+          <descriptions display="Commentaires" locale="fr"/>
+          <descriptions display="Comments" locale="en"/>
+        </fields>
+      </groups>
+    </entities>
+    <entities name="Organization" shortName="ORG" columnFields="/0/@entities.12/@groups.0/@fields.0" mainFields="/0/@entities.12/@groups.0/@fields.0" sortFields="/0/@entities.12/@groups.0/@fields.0" color="1c389a" nestedFields="/0/@entities.12/@groups.0/@fields.0 /0/@entities.12/@groups.0/@fields.1 /0/@entities.12/@groups.1/@fields.0">
+      <descriptions display="Organization" locale="en"/>
+      <descriptions display="Organisation" locale="fr"/>
+      <groups name="Identification" shortName="ORGA">
+        <descriptions display="Identification" locale="fr"/>
+        <descriptions display="Identification" locale="en"/>
+        <fields xsi:type="imogene:TextField" name="Nom" shortName="ORGAA" required="true">
+          <descriptions display="Nom" locale="fr"/>
+          <descriptions display="Name" locale="en"/>
+        </fields>
+        <fields xsi:type="imogene:GeoField" name="Position" shortName="ORGAB">
+          <descriptions display="Position" locale="fr"/>
+          <descriptions display="Position" locale="en"/>
+        </fields>
+      </groups>
+      <groups name="Administration" readers="/0/@roles.2" writers="/0/@roles.2" shortName="ORGB">
+        <descriptions display="Administration" locale="fr"/>
+        <descriptions display="Administration" locale="en"/>
+        <fields xsi:type="imogene:TextField" name="Comments" shortName="ORGBA">
+          <descriptions display="Commentaires" locale="fr"/>
+          <descriptions display="Comments" locale="en"/>
+        </fields>
+      </groups>
+    </entities>
+    <entityUIFormats entity="Avion" withTabulations="true"/>
+    <entityUIFormats entity="Company" withTabulations="true"/>
+    <themas name="Materiel" entities="Avion Aile Queue CarnetEntretien">
+      <descriptions display="Mat\u00E9riel" locale="fr"/>
+      <descriptions display="Material" locale="en"/>
+    </themas>
+    <themas name="Party" entities="Pilote Hotesse Company Syndicat">
+      <descriptions display="Intervenant" locale="fr"/>
+      <descriptions display="Party" locale="en"/>
+    </themas>
+    <themas name="Other" entities="Manager Technician TestFieldEntity Address Organization">
+      <descriptions display="Autre" locale="fr"/>
+      <descriptions display="Other" locale="en"/>
+    </themas>
+    <roles name="PersonnelNavigant"/>
+    <roles name="PersonnelTechnique"/>
+    <roles name="administrator"/>
+    <languages name="French" floatFormat="#.##" isoCode="fr"/>
+    <languages name="English" dateFormat="MM/dd/yyyy" floatFormat="#.##" isoCode="en"/>
+  </imogene:Project>
+  <imogene:ActorFilter entityField="/0/@entities.0/@groups.0/@fields.2" actorField="/0/@entities.9/@filters.0"/>
+  <imogene:ActorFilter entityField="/0/@entities.3/@groups.0/@fields.3" actorField="/0/@entities.9/@filters.0"/>
+  <imogene:ActorFilter entityField="/0/@entities.4/@groups.0/@fields.1" actorField="/0/@entities.9/@filters.0"/>
+</xmi:XMI>
