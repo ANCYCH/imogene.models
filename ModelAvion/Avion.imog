@@ -22,7 +22,7 @@
           <descriptions display="Company" locale="en"/>
         </fields>
       </groups>
-      <groups name="Pieces" readers="/0/@roles.1" writers="/0/@roles.1" shortName="AVIB">
+      <groups name="Pieces" shortName="AVIB">
         <descriptions display="Pi\u00e8ces" locale="fr"/>
         <descriptions display="Pieces" locale="en"/>
         <fields xsi:type="imogene:MainRelationFieldEntity" name="RelationQueue" shortName="AVIBA" entity="Queue" cardinality="1" type="Composition" oppositeRelationField="/0/@entities.1/@groups.0/@fields.1">
@@ -34,7 +34,7 @@
           <descriptions display="Wings" locale="en"/>
         </fields>
       </groups>
-      <groups name="Equipage" readers="/0/@roles.0" writers="/0/@roles.0" shortName="AVIC">
+      <groups name="Equipage" shortName="AVIC">
         <descriptions display="Equipage" locale="fr"/>
         <descriptions display="Fleet" locale="en"/>
         <fields xsi:type="imogene:MainRelationFieldEntity" name="RelationPilote" shortName="AVICA" entity="Pilote" cardinality="1" commonFields="/0/@entities.0/@groups.0/@fields.2 /0/@entities.3/@groups.0/@fields.3" relationHierarchicalFilter="/0/@entities.0/@groups.0/@fields.2 /0/@entities.3/@groups.0/@fields.3">
@@ -50,7 +50,7 @@
           <descriptions display="Stewardesses" locale="en"/>
         </fields>
       </groups>
-      <groups name="Entretien" readers="/0/@roles.0 /0/@roles.1" writers="/0/@roles.1" shortName="AVID">
+      <groups name="Entretien" shortName="AVID">
         <descriptions display="Carnet d'entretien" locale="fr"/>
         <descriptions display="Maintenance book" locale="en"/>
         <fields xsi:type="imogene:MainRelationFieldEntity" name="RelationCarnet" shortName="AVIDA" entity="CarnetEntretien" cardinality="1" oppositeRelationField="/0/@entities.6/@groups.0/@fields.1">
@@ -62,7 +62,7 @@
     <entities name="Queue" shortName="QUE" columnFields="/0/@entities.1/@groups.0/@fields.0 /0/@entities.1/@groups.0/@fields.1" mainFields="/0/@entities.1/@groups.0/@fields.0" sortFields="/0/@entities.1/@groups.0/@fields.0" color="eeb719">
       <descriptions display="Queue" locale="fr"/>
       <descriptions display="Tail" locale="en"/>
-      <groups name="Description" readers="/0/@roles.1" writers="/0/@roles.1" shortName="QUEA">
+      <groups name="Description" shortName="QUEA">
         <descriptions display="Description" locale="fr"/>
         <descriptions display="Description" locale="en"/>
         <fields xsi:type="imogene:TextField" name="NumeroSerie" shortName="QUEAA" required="true">
@@ -78,7 +78,7 @@
     <entities name="Aile" shortName="AIL" columnFields="/0/@entities.2/@groups.0/@fields.0 /0/@entities.2/@groups.0/@fields.1" mainFields="/0/@entities.2/@groups.0/@fields.0" sortFields="/0/@entities.2/@groups.0/@fields.0" color="c9ef62">
       <descriptions display="Aile" locale="fr"/>
       <descriptions display="Wing" locale="en"/>
-      <groups name="Description" readers="/0/@roles.1" writers="/0/@roles.1" shortName="AILA">
+      <groups name="Description" shortName="AILA">
         <descriptions display="Description" locale="fr"/>
         <descriptions display="Description" locale="en"/>
         <fields xsi:type="imogene:TextField" name="NumeroSerie" shortName="AILAA" required="true">
@@ -94,7 +94,7 @@
     <entities name="Pilote" shortName="PIL" columnFields="/0/@entities.3/@groups.0/@fields.0 /0/@entities.3/@groups.0/@fields.1 /0/@entities.3/@groups.0/@fields.2 /0/@entities.3/@groups.0/@fields.3" mainFields="/0/@entities.3/@groups.0/@fields.1" icon="Pilote.png" sortFields="/0/@entities.3/@groups.0/@fields.1" actorFilterFields="/2" color="b6dca5" hasDynamicFields="true">
       <descriptions display="Pilote" locale="fr"/>
       <descriptions display="Pilot" locale="en"/>
-      <groups name="Description" readers="/0/@roles.0" writers="/0/@roles.0" shortName="PILA">
+      <groups name="Description" shortName="PILA">
         <descriptions display="Description" locale="fr"/>
         <descriptions display="Description" locale="en"/>
         <fields xsi:type="imogene:EnumField" name="Sexe" shortName="PILAA" required="true">
@@ -130,7 +130,7 @@
     <entities name="Hotesse" shortName="HOT" columnFields="/0/@entities.4/@groups.0/@fields.0 /0/@entities.4/@groups.0/@fields.1" mainFields="/0/@entities.4/@groups.0/@fields.0" icon="MedecinReferant.png" sortFields="/0/@entities.4/@groups.0/@fields.0" actorFilterFields="/3" color="d72bd0">
       <descriptions display="H\u00f4tesse" locale="fr"/>
       <descriptions display="Stewardess" locale="en"/>
-      <groups name="Description" readers="/0/@roles.0" writers="/0/@roles.0" shortName="HOTA">
+      <groups name="Description" shortName="HOTA">
         <descriptions display="Description" locale="fr"/>
         <descriptions display="Description" locale="en"/>
         <fields xsi:type="imogene:TextField" name="Nom" shortName="HOTAA" required="true">
@@ -166,7 +166,7 @@
           <descriptions display="Planes" locale="en"/>
         </fields>
       </groups>
-      <groups name="Personnel" readers="/0/@roles.0" writers="/0/@roles.0" shortName="COMPC">
+      <groups name="Personnel" shortName="COMPC">
         <descriptions display="Personnel" locale="fr"/>
         <descriptions display="Staff" locale="en"/>
         <fields xsi:type="imogene:MainRelationFieldEntity" name="RelationPilotes" shortName="COMPCA" entity="Pilote" oppositeRelationField="/0/@entities.3/@groups.0/@fields.3">
@@ -182,7 +182,7 @@
     <entities name="CarnetEntretien" shortName="CE" columnFields="/0/@entities.6/@groups.0/@fields.0 /0/@entities.6/@groups.0/@fields.1" mainFields="/0/@entities.6/@groups.0/@fields.0" sortFields="/0/@entities.6/@groups.0/@fields.0" color="4aa189">
       <descriptions display="Carnet d'entretien" locale="fr"/>
       <descriptions display="Maintenance book" locale="en"/>
-      <groups name="Description" readers="/0/@roles.0 /0/@roles.1" writers="/0/@roles.1" shortName="CEA">
+      <groups name="Description" shortName="CEA">
         <descriptions display="Description" locale="fr"/>
         <descriptions display="Description" locale="en"/>
         <fields xsi:type="imogene:TextField" name="Nom" shortName="CEAA" required="true">
@@ -195,10 +195,10 @@
         </fields>
       </groups>
     </entities>
-    <entities name="Syndicat" shortName="SYND" columnFields="/0/@entities.7/@groups.0/@fields.0" mainFields="/0/@entities.7/@groups.0/@fields.0" sortFields="/0/@entities.7/@groups.0/@fields.0" color="1c389a" creators="/0/@roles.2 /0/@roles.0" directAccess="/0/@roles.2 /0/@roles.0">
+    <entities name="Syndicat" shortName="SYND" columnFields="/0/@entities.7/@groups.0/@fields.0" mainFields="/0/@entities.7/@groups.0/@fields.0" sortFields="/0/@entities.7/@groups.0/@fields.0" color="1c389a">
       <descriptions display="Staff Union" locale="en"/>
       <descriptions display="Syndicat" locale="fr"/>
-      <groups name="Identification" readers="/0/@roles.2 /0/@roles.0" writers="/0/@roles.2 /0/@roles.0" shortName="SYNDA">
+      <groups name="Identification" shortName="SYNDA">
         <descriptions display="Identification" locale="fr"/>
         <descriptions display="Identification" locale="en"/>
         <fields xsi:type="imogene:TextField" name="Nom" shortName="SYNDAA" required="true">
@@ -406,7 +406,7 @@
     <entities xsi:type="imogene:Actor" name="Manager" shortName="MAN" columnFields="/0/@entities.9/@groups.0/@fields.0" mainFields="/0/@entities.9/@groups.0/@fields.0" sortFields="/0/@entities.9/@groups.0/@fields.0" color="c6f166" hasDynamicFields="true" adminFields="/0/@entities.9/@groups.0/@fields.0">
       <descriptions display="Manager" locale="fr"/>
       <descriptions display="Manager" locale="en"/>
-      <groups name="Identification" readers="/0/@roles.2 /0/@roles.0 /0/@roles.1" writers="/0/@roles.2" shortName="MANA">
+      <groups name="Identification" shortName="MANA">
         <descriptions display="Identification" locale="fr"/>
         <descriptions display="Identification" locale="en"/>
         <fields xsi:type="imogene:TextField" name="Name" shortName="MANAA" required="true">
@@ -420,10 +420,10 @@
       </groups>
       <filters name="Company" shortName="d00da44d-68b9-4019-b42a-c8a5f380e684" entity="Company"/>
     </entities>
-    <entities xsi:type="imogene:Actor" name="Technician" shortName="TECH" columnFields="/0/@entities.10/@groups.0/@fields.0" mainFields="/0/@entities.10/@groups.0/@fields.0" sortFields="/0/@entities.10/@groups.0/@fields.0" authorizedRoles="/0/@roles.1" adminFields="/0/@entities.10/@groups.0/@fields.0">
+    <entities xsi:type="imogene:Actor" name="Technician" shortName="TECH" columnFields="/0/@entities.10/@groups.0/@fields.0" mainFields="/0/@entities.10/@groups.0/@fields.0" sortFields="/0/@entities.10/@groups.0/@fields.0" adminFields="/0/@entities.10/@groups.0/@fields.0">
       <descriptions display="Technicien" locale="fr"/>
       <descriptions display="Technician" locale="en"/>
-      <groups name="Identification" readers="/0/@roles.2 /0/@roles.0 /0/@roles.1" writers="/0/@roles.2" shortName="TECHA">
+      <groups name="Identification" shortName="TECHA">
         <descriptions display="Identification" locale="fr"/>
         <descriptions display="Identification" locale="en"/>
         <fields xsi:type="imogene:TextField" name="Name" shortName="TECHAA">
@@ -435,7 +435,7 @@
     <entities name="Address" shortName="ADD" columnFields="/0/@entities.11/@groups.0/@fields.1 /0/@entities.11/@groups.0/@fields.2 /0/@entities.11/@groups.0/@fields.3 /0/@entities.11/@groups.0/@fields.5 /0/@entities.11/@groups.0/@fields.8" mainFields="/0/@entities.11/@groups.0/@fields.1 /0/@entities.11/@groups.0/@fields.2 /0/@entities.11/@groups.0/@fields.3" nestedFields="/0/@entities.11/@groups.0/@fields.1 /0/@entities.11/@groups.0/@fields.2 /0/@entities.11/@groups.0/@fields.3 /0/@entities.11/@groups.0/@fields.4 /0/@entities.11/@groups.0/@fields.5 /0/@entities.11/@groups.0/@fields.6 /0/@entities.11/@groups.0/@fields.7 /0/@entities.11/@groups.0/@fields.8 /0/@entities.11/@groups.1/@fields.0">
       <descriptions display="Adresse" locale="fr"/>
       <descriptions display="Address" locale="en"/>
-      <groups name="Identification" readers="/0/@roles.0" writers="/0/@roles.0" shortName="ADDA">
+      <groups name="Identification" shortName="ADDA">
         <descriptions display="Identification" locale="fr"/>
         <descriptions display="Identification" locale="en"/>
         <fields xsi:type="imogene:ReverseRelationFieldEntity" name="Hotesse" shortName="ADDAA" entity="Hotesse" cardinality="1" oppositeRelationField="/0/@entities.4/@groups.0/@fields.2">
@@ -496,7 +496,7 @@
           <descriptions display="IsActive" locale="en"/>
         </fields>
       </groups>
-      <groups name="Administration" readers="/0/@roles.2" writers="/0/@roles.2" shortName="ADDB">
+      <groups name="Administration" shortName="ADDB">
         <descriptions display="Administration" locale="fr"/>
         <descriptions display="Administration" locale="en"/>
         <fields xsi:type="imogene:TextField" name="Comments" shortName="ADDBA">
@@ -520,7 +520,7 @@
           <descriptions display="Position" locale="en"/>
         </fields>
       </groups>
-      <groups name="Administration" readers="/0/@roles.2" writers="/0/@roles.2" shortName="ORGB">
+      <groups name="Administration" shortName="ORGB">
         <descriptions display="Administration" locale="fr"/>
         <descriptions display="Administration" locale="en"/>
         <fields xsi:type="imogene:TextField" name="Comments" shortName="ORGBA">
@@ -543,9 +543,6 @@
       <descriptions display="Autre" locale="fr"/>
       <descriptions display="Other" locale="en"/>
     </themas>
-    <roles name="PersonnelNavigant"/>
-    <roles name="PersonnelTechnique"/>
-    <roles name="administrator"/>
     <languages name="French" floatFormat="#.##" isoCode="fr"/>
     <languages name="English" dateFormat="MM/dd/yyyy" floatFormat="#.##" isoCode="en"/>
   </imogene:Project>
