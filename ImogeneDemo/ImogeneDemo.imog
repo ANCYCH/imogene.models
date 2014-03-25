@@ -2,7 +2,7 @@
 <imogene:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:imogene="http://www.i-mogene.org/imogene/1.0" name="ImogeneDemo">
   <description display="Imogene Demo" locale="en"/>
   <description display="Demo Imogene" locale="fr"/>
-  <entities name="CaseDeclaration" shortName="" columnFields="//@entities.0/@groups.0/@fields.0 //@entities.0/@groups.2/@fields.0 //@entities.0/@groups.2/@fields.1 //@entities.0/@groups.2/@fields.2 //@entities.0/@groups.0/@fields.2 //@entities.0/@groups.1/@fields.0 //@entities.0/@groups.1/@fields.1 //@entities.0/@groups.1/@fields.2 //@entities.0/@groups.1/@fields.3" mainFields="//@entities.0/@groups.0/@fields.0 //@entities.0/@groups.0/@fields.2" secondaryFields="//@entities.0/@groups.1/@fields.1 //@entities.0/@groups.2/@fields.2" icon="CaseDeclaration.png" sortFields="//@entities.0/@groups.0/@fields.0" color="66b032" georeferenced="//@entities.0/@groups.2/@fields.4">
+  <entities name="CaseDeclaration" shortName="CASE" columnFields="//@entities.0/@groups.0/@fields.0 //@entities.0/@groups.2/@fields.0 //@entities.0/@groups.2/@fields.1 //@entities.0/@groups.2/@fields.2 //@entities.0/@groups.0/@fields.2 //@entities.0/@groups.1/@fields.0 //@entities.0/@groups.1/@fields.1 //@entities.0/@groups.1/@fields.2 //@entities.0/@groups.1/@fields.3" mainFields="//@entities.0/@groups.0/@fields.0 //@entities.0/@groups.0/@fields.2" secondaryFields="//@entities.0/@groups.1/@fields.1 //@entities.0/@groups.2/@fields.2" icon="CaseDeclaration.png" sortFields="//@entities.0/@groups.0/@fields.0" color="66b032" georeferenced="//@entities.0/@groups.2/@fields.4">
     <descriptions display="Case declaration" locale="en"/>
     <descriptions display="D\u00e9claration de cas" locale="fr"/>
     <groups name="Case" shortName="CASEA" icon="CDCase.png">
@@ -98,14 +98,14 @@
         <fieldDependentVisibility dependencyField="//@entities.0/@groups.0/@fields.4" dependencyFieldValue="true"/>
       </fields>
     </groups>
-    <groups name="MedicalData" shortName="CASEC" icon="CDMedicalData.png">
+    <groups name="MedicalData" shortName="CASEB" icon="CDMedicalData.png">
       <descriptions display="Medical data" locale="en"/>
       <descriptions display="Donn\u00e9es m\u00e9dicales" locale="fr"/>
-      <fields xsi:type="imogene:DateField" name="OnsetDate" shortName="CASECA" defaultValue="">
+      <fields xsi:type="imogene:DateField" name="OnsetDate" shortName="CASEBA" defaultValue="">
         <descriptions display="Symptoms onset date" locale="en"/>
         <descriptions display="Date de d\u00e9but des symptomes" locale="fr"/>
       </fields>
-      <fields xsi:type="imogene:EnumField" name="SuspectedSyndrome" shortName="CASECB">
+      <fields xsi:type="imogene:EnumField" name="SuspectedSyndrome" shortName="CASEBB">
         <descriptions display="Suspected syndrome" locale="en"/>
         <descriptions display="Maladie suspect\u00e9" locale="fr"/>
         <enumValues name="Cholera">
@@ -161,11 +161,11 @@
           <descriptions display="Autre" locale="fr"/>
         </enumValues>
       </fields>
-      <fields xsi:type="imogene:BooleanField" name="TreatmentGiven" shortName="CASECC">
+      <fields xsi:type="imogene:BooleanField" name="TreatmentGiven" shortName="CASEBC">
         <descriptions display="Treatment given" locale="en"/>
         <descriptions display="Traitement administr\u00e9" locale="fr"/>
       </fields>
-      <fields xsi:type="imogene:EnumField" name="Outcome" shortName="CASECD">
+      <fields xsi:type="imogene:EnumField" name="Outcome" shortName="CASEBD">
         <descriptions display="Outcome" locale="en"/>
         <descriptions display="R\u00e9sultat" locale="fr"/>
         <enumValues name="CurrentlyIll">
@@ -181,31 +181,31 @@
           <descriptions display="D\u00e9c\u00e9d\u00e9" locale="fr"/>
         </enumValues>
       </fields>
-      <fields xsi:type="imogene:TextField" name="FinalDiagnosis" shortName="CASECE">
+      <fields xsi:type="imogene:TextField" name="FinalDiagnosis" shortName="CASEBE">
         <descriptions display="Final diagnosis" locale="en"/>
         <descriptions display="Diagnostic final" locale="fr"/>
       </fields>
     </groups>
-    <groups name="Location" shortName="CASEB" icon="Location.png">
+    <groups name="Location" shortName="CASEC" icon="Location.png">
       <descriptions display="Location" locale="en"/>
       <descriptions display="Lieu" locale="fr"/>
-      <fields xsi:type="imogene:MainRelationFieldEntity" name="AdminLevel1" shortName="CASEBA" entity="AdminLevel1" cardinality="1">
+      <fields xsi:type="imogene:MainRelationFieldEntity" name="AdminLevel1" shortName="CASECA" entity="AdminLevel1" cardinality="1">
         <descriptions display="Country" locale="en"/>
         <descriptions display="Pays" locale="fr"/>
       </fields>
-      <fields xsi:type="imogene:MainRelationFieldEntity" name="AdminLevel2" shortName="CASEBB" entity="AdminLevel2" cardinality="1" relationHierarchicalFilter="//@entities.0/@groups.2/@fields.0 //@entities.4/@groups.0/@fields.0">
+      <fields xsi:type="imogene:MainRelationFieldEntity" name="AdminLevel2" shortName="CASECB" entity="AdminLevel2" cardinality="1" relationHierarchicalFilter="//@entities.0/@groups.2/@fields.0 //@entities.4/@groups.0/@fields.0">
         <descriptions display="Region" locale="en"/>
         <descriptions display="R\u00e9gion" locale="fr"/>
       </fields>
-      <fields xsi:type="imogene:MainRelationFieldEntity" name="AdminLevel3" shortName="CASEBC" entity="AdminLevel3" cardinality="1" relationHierarchicalFilter="//@entities.0/@groups.2/@fields.1 //@entities.5/@groups.0/@fields.1">
+      <fields xsi:type="imogene:MainRelationFieldEntity" name="AdminLevel3" shortName="CASECC" entity="AdminLevel3" cardinality="1" relationHierarchicalFilter="//@entities.0/@groups.2/@fields.1 //@entities.5/@groups.0/@fields.1">
         <descriptions display="Province" locale="en"/>
         <descriptions display="Province" locale="fr"/>
       </fields>
-      <fields xsi:type="imogene:AddressField" name="Address" shortName="CASEBD">
+      <fields xsi:type="imogene:AddressField" name="Address" shortName="CASECD">
         <descriptions display="Address" locale="en"/>
         <descriptions display="Adresse" locale="fr"/>
       </fields>
-      <fields xsi:type="imogene:GeoField" name="Gps" shortName="CASEBE">
+      <fields xsi:type="imogene:GeoField" name="Gps" shortName="CASECE">
         <descriptions display="Geographic coordinates" locale="en"/>
         <descriptions display="Coordonn\u00e9es g\u00e9ographiques" locale="fr"/>
       </fields>
@@ -311,7 +311,7 @@
       </fields>
     </groups>
   </entities>
-  <entities name="AdminLevel2" shortName="ADM2" columnFields="//@entities.4/@groups.0/@fields.1 //@entities.4/@groups.0/@fields.0" mainFields="//@entities.4/@groups.0/@fields.1" sortFields="//@entities.4/@groups.0/@fields.0">
+  <entities name="AdminLevel2" shortName="ADM2" columnFields="//@entities.4/@groups.0/@fields.1 //@entities.4/@groups.0/@fields.0" mainFields="//@entities.4/@groups.0/@fields.1" secondaryFields="//@entities.4/@groups.0/@fields.0" sortFields="//@entities.4/@groups.0/@fields.0">
     <descriptions display="Region" locale="en"/>
     <descriptions display="R\u00e9gion" locale="fr"/>
     <groups name="Identification" shortName="ADM2A">
@@ -327,7 +327,7 @@
       </fields>
     </groups>
   </entities>
-  <entities name="AdminLevel3" shortName="ADM3" columnFields="//@entities.5/@groups.0/@fields.2 //@entities.5/@groups.0/@fields.0 //@entities.5/@groups.0/@fields.1" mainFields="//@entities.5/@groups.0/@fields.2" sortFields="//@entities.5/@groups.0/@fields.1">
+  <entities name="AdminLevel3" shortName="ADM3" columnFields="//@entities.5/@groups.0/@fields.2 //@entities.5/@groups.0/@fields.0 //@entities.5/@groups.0/@fields.1" mainFields="//@entities.5/@groups.0/@fields.2" secondaryFields="//@entities.5/@groups.0/@fields.1" sortFields="//@entities.5/@groups.0/@fields.1">
     <descriptions display="Province" locale="en"/>
     <descriptions display="Province" locale="fr"/>
     <groups name="Identification" shortName="ADM3A">
