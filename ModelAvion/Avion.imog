@@ -403,7 +403,7 @@
         </fields>
       </groups>
     </entities>
-    <entities xsi:type="imogene:Actor" name="Manager" shortName="MAN" columnFields="/0/@entities.9/@groups.0/@fields.0" mainFields="/0/@entities.9/@groups.0/@fields.0" sortFields="/0/@entities.9/@groups.0/@fields.0" color="c6f166" hasDynamicFields="true" adminFields="/0/@entities.9/@groups.0/@fields.0">
+    <entities xsi:type="imogene:Actor" name="Manager" shortName="MAN" columnFields="/0/@entities.9/@groups.0/@fields.0" mainFields="/0/@entities.9/@groups.0/@fields.0" sortFields="/0/@entities.9/@groups.0/@fields.0" color="c6f166" hasDynamicFields="true" adminFields="/0/@entities.9/@groups.0/@fields.0 /0/@entities.9/@groups.0/@fields.1">
       <descriptions display="Manager" locale="fr"/>
       <descriptions display="Manager" locale="en"/>
       <groups name="Identification" shortName="MANA">
