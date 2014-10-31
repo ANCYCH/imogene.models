@@ -515,7 +515,7 @@
           <descriptions display="Nom" locale="fr"/>
           <descriptions display="Name" locale="en"/>
         </fields>
-        <fields xsi:type="imogene:GeoField" name="Position" shortName="ORGAB">
+        <fields xsi:type="imogene:GeoField" name="Positiongeo" shortName="ORGAB">
           <descriptions display="Position" locale="fr"/>
           <descriptions display="Position" locale="en"/>
         </fields>
